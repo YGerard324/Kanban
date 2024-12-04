@@ -112,13 +112,32 @@ $(document).ready(function () {
             data: JSON.stringify(updatedTask),
             success: function () {
                 console.log('Tarefa atualizada com sucesso!');
-                // Atualiza a lista de tarefas ou fecha o modal
-                $('#editTaskModal').modal('hide');
+                
+                // Exibe o SweetAlert de sucesso
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sucesso!',
+                    text: 'A tarefa foi atualizada com sucesso.',
+                    confirmButtonText: 'Fechar'
+                }).then(() => {
+                    // Atualiza a lista de tarefas ou fecha o modal
+                    $('#editTaskModal').modal('hide');
+                    loadTasks();  // Supondo que você tenha uma função para recarregar as tarefas
+                });
             },
             error: function (err) {
                 console.error('Erro ao atualizar a tarefa:', err);
+                
+                // Exibe o SweetAlert de erro
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro!',
+                    text: 'Não foi possível atualizar a tarefa.',
+                    confirmButtonText: 'Fechar'
+                });
             }
         });
+        
     });
     
     
