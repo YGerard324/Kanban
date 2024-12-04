@@ -174,6 +174,7 @@ $(document).ready(function () {
     // Evento de clique no botão de excluir tarefa
     $(document).on('click', '.delete-btn', function () {
         var taskId = $(this).closest('.task-card').data('id');
+        
         Swal.fire({
             title: 'Tem certeza?',
             text: 'Essa tarefa será excluída!',
@@ -187,15 +188,32 @@ $(document).ready(function () {
                     url: `http://localhost:3000/api/task/${taskId}`,
                     type: 'DELETE',
                     success: function () {
-                        // Atualiza a lista de tarefas após a exclusão
-                        loadTasks();
+                        // Exibe SweetAlert de sucesso de exclusão
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Tarefa Deletada!',
+                            text: 'A tarefa foi excluída com sucesso.',
+                            confirmButtonText: 'Fechar'
+                        }).then(() => {
+                            // Atualiza a lista de tarefas após a exclusão
+                            loadTasks();
+                        });
                     },
                     error: function (err) {
                         console.error('Erro ao excluir a tarefa:', err);
-                        loadTasks();
+                        
+                        // Exibe SweetAlert de erro
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro!',
+                            text: 'Não foi possível excluir a tarefa.',
+                            confirmButtonText: 'Fechar'
+                        });
                     }
                 });
             }
         });
     });
+    
 });
+

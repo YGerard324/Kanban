@@ -27,5 +27,5 @@ module.exports.update = async (req, res) => {
 module.exports.delete = async (req, res) => {
     const {id} = req.params;
     let row = await taskFacade.delete(id);
-    res.status(200).json(row);
+    res.status(200).json({ message: 'Tarefa deletada realizado com sucesso!' });
 };
