@@ -1,0 +1,170 @@
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9; /* Cor de fundo suave */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0056b3 !important;
+    padding: 1rem;
+}
+
+.navbar a {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.navbar-nav {
+    white-space: nowrap;
+}
+
+.navbar-nav .nav-item {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* Título da página */
+h2 {
+    color: #000000;
+    font-size: 2rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Kanban Board */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Colunas do Kanban - adicionando espaçamento entre as colunas */
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adicionando espaçamento entre as colunas */
+}
+
+.col-md-4 {
+    background-color: #e1e4e8;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: auto;
+    flex: 1; /* Assegura que cada coluna tenha a mesma largura */
+}
+
+h3 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Cards de tarefa */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.task-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.task-card p {
+    margin: 5px 0;
+}
+
+.task-card .status-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.status-btn {
+    width: 80px;
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+.status-btn:disabled {
+    background-color: #dcdcdc;
+    cursor: not-allowed;
+}
+
+/* Botões */
+button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Modal de edição */
+#editTaskModal .modal-dialog {
+    max-width: 600px;
+    margin: 1.75rem auto;
+}
+
+#editTaskModal .modal-content {
+    border-radius: 8px;
+    padding: 15px;
+}
+
+#editTaskModal .modal-header {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+}
+
+#editTaskModal .form-label {
+    font-weight: 600;
+}
+
+#editTaskModal .form-control, 
+#editTaskModal .form-select {
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Alertas */
+.swal2-popup {
+    font-family: 'Segoe UI', sans-serif;
+}
